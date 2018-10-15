@@ -40,8 +40,8 @@ Solutions 은 [Pull Request](https://help.github.com/articles/using-pull-request
 ## Node
 
 Finish implementing the provided HTTP request handler
-  * [ ] POSTing to a route should increment the endpoint's count on `globalCounter`.
-  * [ ] GETting from a route should return the value stored at that property on `globalCounter`.
+  * [Complete] POSTing to a route should increment the endpoint's count on `globalCounter`.
+  * [Complete] GETting from a route should return the value stored at that property on `globalCounter`.
 
 You can start the server by running `node index.js`, and test it with [Postman](https://www.getpostman.com/) or from Terminal with `curl`
 
@@ -64,8 +64,8 @@ curl -X POST 127.0.0.1:8000/prop1
 
 Inside `async-word-count.js`, complete `getTotalWordCount`. `getTotalWordCount` should pass the combined word count of the files located at `filePathOne` and `filePathTwo` to the `callback` following proper node style convention
 
-- [ ] Be sure to handle errors at each step
-- [ ] Do not use promises
+- [Complete] Be sure to handle errors at each step
+- [Complete] Do not use promises
 
 ### Available Resources for this Prompt
 * React Docs
