@@ -16,7 +16,7 @@
 ## Grading Outline
 
 - [ ] node-req-count
-- [ ] react-pond
+- [ ] Async-word-count
 
 ## Using and Referencing Outside Resources
 
@@ -60,13 +60,12 @@ curl -X POST 127.0.0.1:8000/prop1
 * A subsequent GET to `/prop1` should return `2`
 * A subsequent GET to `/prop2` should return an empty response, as it has not yet been set.
 
-### React
+## Async word count
 
-Create a fish pond in React:
+Inside `async-word-count.js`, complete `getTotalWordCount`. `getTotalWordCount` should pass the combined word count of the files located at `filePathOne` and `filePathTwo` to the `callback` following proper node style convention
 
-* [ ] Install this prompts dependencies by running `npm install` from the root of this directory
-* [ ] Start the app by running `npm start` from the root of this directory
-* [ ] Refactor the `FishTable` and `FishTableRow` components to dynamically render the passed in `fishData`
+- [ ] Be sure to handle errors at each step
+- [ ] Do not use promises
 
 ### Available Resources for this Prompt
 * React Docs
