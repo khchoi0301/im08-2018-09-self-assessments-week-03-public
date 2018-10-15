@@ -2,16 +2,39 @@ var url = require('url');
 var http = require('http');
 var path = require('path');
 
-var globalCounter = {};
+var globalCounter = {
+  prop1: 0
+};
 
-var server = http.createServer(function(request, response) {
+var server = http.createServer(function (request, response) {
   var endpoint = url.parse(request.url, true).pathname;
   var property = endpoint.replace(/^\//, '');
 
-  if (request.method === 'POST') {
-    // YOUR CODE HERE
+
+  // globalCounter.prop1 = 0
+  // console.log(request.method, request.url, globalCounter.prop1)
+
+
+  if (request.method === 'POST' && request.url === '/prop1') {
+    console.log('post', request.method, request.url, globalCounter.prop1)
+    globalCounter.prop1++
+    console.log('ondata', globalCounter.prop1)
+    response.statusCode = 201;
+    response.end(JSON.stringify(globalCounter.prop1));
+    // response.on('data', () => {
+    //   globalCounter.prop1++
+    //   console.log('ondata', globalCounter.prop1)
+    // })
+    // response.on('end', () => {
+    //   response.statusCode = 201;
+    //   response.end('');
+    // })
+
   } else if (request.method === 'GET') {
-    // YOUR CODE HERE
+    response.statusCode = 200;
+    console.log('get', request.method, request.url, globalCounter.prop1)
+
+    response.end(JSON.stringify(globalCounter.prop1));
   } else {
     response.statusCode = 404;
     response.end();
